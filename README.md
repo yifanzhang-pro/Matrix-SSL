@@ -1,2 +1,3 @@
-# RKHS
-RKHS view of Self-supervised Learning
+# Kernel-SSL
+
+Understanding Self-supervised Learning from Kernel Perspective.
