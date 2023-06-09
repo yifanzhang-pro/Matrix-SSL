@@ -1,6 +1,6 @@
 # PyTorch-KernelSSL
 
-Code for Kernel-SSL from paper titled 'Understanding Self-supervised Learning from Kernel Perspective'.
+Code for Kernel-SSL from paper titled 'Kernel-SSL: Kernel KL Divergence for Self-supervised Learning'.
 
 
 
