@@ -43,12 +43,13 @@ $ python main_lincls.py \
   --lars \
   /path/to/imagenet/dataset
 ```
+## Transfer learning on COCO
 
-
+We use exactly the same code as [MoCo](https://github.com/facebookresearch/moco/tree/main/detection). One can just follow its instructions, firstly convert the pre-trained weights to detectron2's format, then do transfer learning. 
 
 ## Acknowledgement
 
-This repo is mainly based on [MEC](https://github.com/xinliu20/MEC). Many thanks to their wonderful work!
+This repo is mainly based on [MEC](https://github.com/xinliu20/MEC) and [MoCo](https://github.com/facebookresearch/moco). Many thanks to their wonderful work!
 
 
 
