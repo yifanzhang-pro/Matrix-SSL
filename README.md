@@ -1,12 +1,12 @@
-# PyTorch-KernelSSL
+# Matrix-SSL
 
-Code for Kernel-SSL from paper titled 'Kernel-SSL: Kernel KL Divergence for Self-supervised Learning'.
+Code for Matrix-SSL from paper titled 'Matrix-SSL: Matrix Information Theory for Self-supervised Learning'.
 
 
 
 ## Introduction
 
-PyTorch Implementation for Kernel-SSL, Modified from MEC Codes.
+PyTorch Implementation for Matrix-SSL, Modified from MEC Codes.
 
 
 
