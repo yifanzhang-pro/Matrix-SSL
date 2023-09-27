@@ -1,6 +1,6 @@
 # Matrix-SSL
 
-Code for Matrix-SSL from paper titled 'Matrix-SSL: Matrix Information Theory for Self-supervised Learning'.
+Official implementation of paper 'Matrix-SSL: Matrix KL Divergence for Self-supervised Learning' (https://arxiv.org/abs/2305.17326).
 
 
 
