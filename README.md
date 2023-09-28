@@ -1,6 +1,6 @@
 # Matrix-SSL
 
-Official implementation of paper 'Matrix-SSL: Matrix KL Divergence for Self-supervised Learning' (https://arxiv.org/abs/2305.17326).
+Implementation of paper 'Matrix-SSL: Matrix KL Divergence for Self-supervised Learning'.
 
 
 
