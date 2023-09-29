@@ -114,8 +114,6 @@ parser.add_argument('--mce_order', default=4, type=int, metavar='M',
                     help='mce order')
 parser.add_argument('--gamma', default=1.0, type=float, metavar='M',
                     help='mce gamma')
-parser.add_argument('--HSIC', action='store_true')
-parser.add_argument('--Euclidean', action='store_true')
 parser.add_argument('--align_gamma', default=0.003, type=float, help='align_gamma')
 parser.add_argument('--teacher-momentum', default=0.996, type=float, metavar='M',
                     help='momentum of teacher update')
@@ -380,10 +378,10 @@ def train(train_loader, model, optimizer, epoch, lr_schedule, momentum_schedule,
             #             + mce_loss_func(p1, z2, correlation=args.correlation, logE=False)
             #             ) * 0.5
 
-            mce_loss = (mce_loss_func(p2, z1, correlation=True, logE=False, HSIC=args.HSIC, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, Euclidean=args.Euclidean, align_gamma=args.align_gamma)
-                        + mce_loss_func(p1, z2, correlation=True, logE=False, HSIC=args.HSIC, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, Euclidean=args.Euclidean, align_gamma=args.align_gamma)
-                        + args.gamma * mce_loss_func(p2, z1, correlation=False, HSIC=args.HSIC, logE=False, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, Euclidean=args.Euclidean, align_gamma=args.align_gamma)
-                        + args.gamma * mce_loss_func(p1, z2, correlation=False, HSIC=args.HSIC, logE=False, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, Euclidean=args.Euclidean, align_gamma=args.align_gamma)
+            mce_loss = (mce_loss_func(p2, z1, correlation=True, logE=False, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, align_gamma=args.align_gamma)
+                        + mce_loss_func(p1, z2, correlation=True, logE=False, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, align_gamma=args.align_gamma)
+                        + args.gamma * mce_loss_func(p2, z1, correlation=False, logE=False, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, align_gamma=args.align_gamma)
+                        + args.gamma * mce_loss_func(p1, z2, correlation=False, logE=False, lamda=args.mce_lambd, mu=args.mce_mu, order=args.mce_order, align_gamma=args.align_gamma)
                         ) * 0.5
             # mec_loss = mec_loss + mce_loss * 1.
             # scaled loss by lamda
@@ -443,7 +441,7 @@ def matrix_log(Q, order=4):
     return res
 
 
-def mce_loss_func(p, z, lamda=1., mu=1., order=4, align_gamma=0.003, correlation=True, logE=False, HSIC=False, Euclidean=False):
+def mce_loss_func(p, z, lamda=1., mu=1., order=4, align_gamma=0.003, correlation=True, logE=False):
     p = gather_from_all(p)
     z = gather_from_all(z)
 
@@ -461,11 +459,8 @@ def mce_loss_func(p, z, lamda=1., mu=1., order=4, align_gamma=0.003, correlation
     else:
         P = (1. / m) * (p.T @ J_m @ p) + mu * torch.eye(n).to(z.device)
         Q = (1. / m) * (z.T @ J_m @ z) + mu * torch.eye(n).to(z.device)
-    if HSIC:
-        HSIC = 1 / (m * m) * (p @ p.T @ J_m @ z @ z.T @ J_m) 
-        return torch.trace(- P @ matrix_log(Q, order)) + torch.trace(- align_gamma * HSIC)
-    else:
-        return torch.trace(- P @ matrix_log(Q, order))
+    
+    return torch.trace(- P @ matrix_log(Q, order))
 
 def loss_func(p, z, lamda_inv, order=4):
 
