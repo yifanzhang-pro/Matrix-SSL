@@ -1,6 +1,6 @@
 # Matrix-SSL
 
-Official implementation of paper 'Matrix Information Theory for Self-supervised Learning' (https://arxiv.org/abs/2305.17326).
+Official implementation of paper 'Matrix Information Theory for Self-Supervised Learning' (https://arxiv.org/abs/2305.17326).
 
 
 
