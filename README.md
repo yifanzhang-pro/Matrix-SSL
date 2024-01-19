@@ -50,9 +50,9 @@ This repo is mainly based on [MEC](https://github.com/xinliu20/MEC) and [MoCo](h
 Please cite the paper and star this repo if you use Matrix-SSL and find it interesting/useful, thanks! Feel free to contact zhangyif21@tsinghua.edu.cn | yangjq21@mails.tsinghua.edu.cn or open an issue if you have any questions.
 
 ```bibtex
-@article{zhang2023kernel,
-  title={Kernel-SSL: Kernel KL Divergence for Self-supervised Learning},
-  author={Zhang, Yifan and Tan, Zhiquan and Yang, Jingqin and Yuan, Yang},
+@article{zhang2023matrix,
+  title={Matrix Information Theory for Self-Supervised Learning},
+  author={Zhang, Yifan and Tan, Zhiquan and Yang, Jingqin and Weiran, Huang and Yuan, Yang},
   journal={arXiv preprint arXiv:2305.17326},
   year={2023}
 }
