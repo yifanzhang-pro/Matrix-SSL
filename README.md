@@ -4,7 +4,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2305.17326)
 ![Python 3.10](https://img.shields.io/badge/python-3.7-green.svg)
 
-Official implementation of paper 'Matrix Information Theory for Self-Supervised Learning' (https://arxiv.org/abs/2305.17326).
+Official implementation of ICML 2024 paper 'Matrix Information Theory for Self-Supervised Learning' (https://arxiv.org/abs/2305.17326).
 
 ## Introduction
 
