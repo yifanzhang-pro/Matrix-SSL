@@ -24,7 +24,7 @@ In order to get the best checkpoint over 100 epochs, run
 $ python main_pretrain.py \
   -a resnet50 \
   --dist-url 'tcp://localhost:10501' --multiprocessing-distributed --world-size 1 --rank 0 \
-  --mce_mu 1.0 --mce_lambd 1.0 --HSIC --gamma 1.0 \ 
+  --mce_mu 1.0 --mce_lambd 1.0 --gamma 1.0 \ 
   /path/to/imagenet/dataset/
 ```
 
