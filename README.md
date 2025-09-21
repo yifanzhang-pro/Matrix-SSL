@@ -1,6 +1,5 @@
-# Matrix-SSL
+# [ICML 2024] Matrix-SSL
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/kernel-ssl-kernel-kl-divergence-for-self/contrastive-learning-on-imagenet-1k)](https://paperswithcode.com/sota/contrastive-learning-on-imagenet-1k?p=kernel-ssl-kernel-kl-divergence-for-self)
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2305.17326)
 ![Python 3.10](https://img.shields.io/badge/python-3.7-green.svg)
 
